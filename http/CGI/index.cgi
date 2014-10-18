@@ -12,12 +12,6 @@ use Mashup::Model::SummaryModel;
 
 use Encode;
 
-my $consumer_key    ='U4RdwMRlVmpFAWoKbmYHAbLQF';
-my $consumer_secret ='I6b8Ynq8yXmqpdWp1gWo6RRwoRLjyplXuG0uPSX994QlPDUQbo';
-my $token           ='127690110-19ikLk3JB7k89MEiuRyX94wUjEyHuCFw8q80mWn2';
-my $token_secret    ='UGc2sxt8qOLHwU3qS2sqZ4Gp4Qs2JPCVPkMUJT7s5bxcO';
-
-
 get '/' => sub {
   my $self = shift;
   $self->stash( { submit_flg => 0, records => {} } );
@@ -28,6 +22,11 @@ post '/' => sub {
   my $self = shift;
 
   # Twitter API 呼び出し------------------------------
+  my $consumer_key    ='U4RdwMRlVmpFAWoKbmYHAbLQF';
+  my $consumer_secret ='I6b8Ynq8yXmqpdWp1gWo6RRwoRLjyplXuG0uPSX994QlPDUQbo';
+  my $token           ='127690110-19ikLk3JB7k89MEiuRyX94wUjEyHuCFw8q80mWn2';
+  my $token_secret    ='UGc2sxt8qOLHwU3qS2sqZ4Gp4Qs2JPCVPkMUJT7s5bxcO';
+
   my $nt = Net::Twitter::Lite::WithAPIv1_1->new(
       consumer_key        => $consumer_key,
       consumer_secret     => $consumer_secret,
